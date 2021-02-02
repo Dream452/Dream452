@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+   
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=tangerine">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+      <h1 style="text-align: center; text-decoration: wavy purple; color: rgb(0, 68, 255);font-family: tangerine; font-size: 80px;">My Favorite Celebrities</h1>
+      <div style="margin-top: 300px;" class="row text-center">
+   <div class="col-md "> <button  onclick="named_popup()" class="btn btn-primary">Hrithik Roshan</button></div>
+<div class="col-md"> <button onclick="named_popup2()" class="btn btn-success">Arijit Singh</button></div>
+<div class="col-md">  <button onclick="named_popup3()" class="btn btn-warning">MS Dhoni</button></div>
+</div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+     <script>
+         popup = function(){
+             swal.fire('Hrithik Roshan', 'Hrithik Roshan is an Indian actor who appears in Hindi films. He has portrayed a variety of characters and is known for his dancing skills. One of the highest-paid actors in India, he has won many awards, including six Filmfares, four for Best Actor and one each for Best Debut and Best Actor.', 'success');
+         }
+         popup2 = function(){
+             swal.fire('Arijit Singh', 'Arijit Singh is an Indian playback singer. He sings predominantly in Hindi and Bengali but has also performed in various other Indian languages. He is the recipient of a National Award and a record six Filmfare Awards.', 'success');
+         }
+         popup3 = function(){
+             swal.fire('MS Dhoni', 'Mahendra Singh Dhoni, is a former Indian international cricketer who captained the Indian national team in limited-overs formats from 2007 to 2016 and in Test cricket from 2008 to 2014.', 'success');
+         }
+         named_popup = function () {
+            Swal.fire({
+                title: 'hrithik Roshan',
+                text: 'Hrithik Roshan is an Indian actor who appears in Hindi films. He has portrayed a variety of characters and is known for his dancing skills. One of the highest-paid actors in India, he has won many awards, including six Filmfares, four for Best Actor and one each for Best Debut and Best Actor.',
+                imageUrl: 'https://i.timesnowhindi.com/Hrithik-Roshan-Birthday-1_1578566009__rend_1_1.jpg?tr=w-600',
+                background: 'url(https://i.pinimg.com/736x/32/e4/12/32e41273671ca4967cfb767552e6fe28.jpg)',  //for changing background of popup
+                backdrop: 'url(https://i.imgur.com/OqH4GUk.jpg)' //for page background 
+            });
+        }
+
+        named_popup2 = function () {
+            Swal.fire({
+                title: 'Arijit Singh',
+                text: 'Arijit Singh is an Indian playback singer. He sings predominantly in Hindi and Bengali but has also performed in various other Indian languages. He is the recipient of a National Award and a record six Filmfare Awards.',
+                imageUrl: 'https://cdn.dnaindia.com/sites/default/files/styles/full/public/2018/03/23/664072-arijit-singh.jpg',
+                background: 'url(https://static.vecteezy.com/system/resources/previews/000/342/499/non_2x/vector-abstract-low-poly-design-background.jpg) no-repeat',  //for changing background of popup
+                backdrop: 'url(https://i.imgur.com/OqH4GUk.jpg)', //for page background 
+            
+            });
+        }
+
+        named_popup3 = function () {
+            Swal.fire({
+                title: 'MS Dhoni',
+                text: 'Mahendra Singh Dhoni, is a former Indian international cricketer who captained the Indian national team in limited-overs formats from 2007 to 2016 and in Test cricket from 2008 to 2014.',
+                imageUrl: 'https://www.punekarnews.in/wp-content/uploads/2020/07/MS-Dhoni.jpg',
+                background: 'url(https://i.pinimg.com/736x/32/e4/12/32e41273671ca4967cfb767552e6fe28.jpg)',  //for changing background of popup
+                backdrop: 'url(https://i.imgur.com/OqH4GUk.jpg)' //for page background 
+            });
+        }
+
+
+     </script> 
+  </body>
+</html>

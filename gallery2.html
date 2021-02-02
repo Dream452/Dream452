@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Tangerine">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.css"
+        integrity="sha512-uMIpMpgk4n6esmgdfJtATLLezuZNRb96YEgJXVeo4diHFOF/gqlgu4Y5fg+56qVYZfZYdiqnAQZlnu4j9501ZQ=="
+        crossorigin="anonymous" />
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        html,
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #eee;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .swiper-container {
+            margin-top: 100px;
+            width: 40%;
+            height: 75%;
+
+        }
+
+        .swiper-slide {
+            text-align: right;
+            font-size: 18px;
+            background: #fff;
+            padding: 50px;
+
+            /* Center slide text vertically */
+            /* display: -webkit-box; */
+            /* display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            align-items: center; */
+        }
+
+        .mytext {
+            font-size: 100px;
+            color: rgb(255, 255, 255);
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.527);
+            font-weight: bold;
+            font-family: Tangerine;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"
+        integrity="sha512-VHsNaV1C4XbgKSc2O0rZDmkUOhMKPg/rIi8abX9qTaVDzVJnrDGHFnLnCnuPmZ3cNi1nQJm+fzJtBbZU9yRCww=="
+        crossorigin="anonymous"></script>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide bg-primary"
+                style="background-image: url('https://www.hdcarwallpapers.com/download/mclaren_p1_supercars_4k-3840x2160.jpg');background-repeat: no-repeat; background-size: cover;">
+                <p class="mytext">mclaren</p>
+            </div>
+            <div class="swiper-slide bg-danger"
+                style="background-image: url('https://wallpaperaccess.com/full/195305.jpg');background-repeat: no-repeat; background-size: cover;">
+                <p class="mytext">LaFarrari</p>
+            </div>
+            <div class="swiper-slide bg-success"
+                style="background-image: url('https://www.wallpapertip.com/wmimgs/5-57549_lamborghini-terzo-millennio.jpg');background-repeat: no-repeat; background-size: cover;">
+                <p class="mytext">Lamborghini</p>
+            </div>
+            <div class="swiper-slide bg-warning"
+                style="background-image: url('https://www.wsupercars.com/wallpapers/Bugatti/2019-Bugatti-Divo-007-1080.jpg');background-repeat: no-repeat; background-size: cover;">
+                <p class="mytext">Bugatti</p>
+            </div>
+
+
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+
+
+    </div>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'progressbar'
+            },
+            loop: true,
+            effect: 'cube',
+            autoplay: {
+                delay: 3000,
+                disableOnIntraction: true
+            }
+        });
+    </script>
+</body>
+
+</html>
