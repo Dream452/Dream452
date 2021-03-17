@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Movie Search Project</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lobster">
+
+    <style>
+        .my-header {
+            margin-top: 100px;
+            padding: 40px;
+            border: 1px solid rgb(195, 195, 195);
+            box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.287);
+            border-radius: 10px;
+
+        }
+        .text{
+            font-family: Lobster;
+        }
+        #image{
+            margin-top: 50px;
+        }
+       
+    </style>
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="col-md-10 mx-auto text">
+        <header class="my-header">
+            <h1 class="display-4 text-center">Search your Movie here</h1>
+            <input id="movie" class="mt-5 form-control" type="text" placeholder="Search">
+            <button class="btn btn-primary btn-block mt-3" onclick="getmoviename()">Search</button>
+        </header>
+        <div class="result">
+            <div class="row">
+                <div class="col-md-3">
+                    <img src="" alt="" id="image">
+                </div>
+                <div class="col-md-9">
+                    <div class="row">
+                        <div class="col-4">
+                            <p class="heading">Title</p>
+                        </div>
+                        <div class="col-8">
+                            <p class="detail" id="title"></p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-4">
+                            <p class="heading">Actors</p>
+                        </div>
+                        <div class="col-8">
+                            <p class="detail" id="actor"></p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-4">
+                            <p class="heading">Plot</p>
+                        </div>
+                        <div class="col-8">
+                            <p class="detail" id="plot"></p>
+                        </div>
+                        </div>
+
+                        <div class="row">
+                        <div class="col-4">
+                            <p class="heading">Production</p>
+                        </div>
+                        <div class="col-8">
+                            <p class="detail" id="production"></p>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-4">
+                                <p class="heading">BoxOffice</p>
+                            </div>
+                            <div class="col-8">
+                                <p class="detail" id="BoxOffice"></p>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-4">
+                                <p class="heading">Awards</p>
+                            </div>
+                            <div class="col-8">
+                                <p class="detail" id="Awards"></p>
+                            </div>
+                        </div>
+                        
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+
+            // This code is used to display movie details on page
+
+            var xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                if (xhr.status >= 200 && xhr.status < 300) {
+                    data = xhr.response;
+                    data = JSON.parse(data);
+
+                    // write your code here
+                    console.log(data);
+
+                    document.getElementById('image').setAttribute('src', data.Poster)
+                    document.getElementById('title').innerHTML = data.Title
+                    document.getElementById('actor').innerHTML = data.Actors
+                    document.getElementById('plot').innerHTML = data.Plot
+                    document.getElementById('production').innerHTML = data.Production
+                    document.getElementById('BoxOffice').innerHTML = data.BoxOffice
+                    document.getElementById('Awards').innerHTML = data.Awards
+
+
+                } 
+                else 
+                {
+                    console.log('The request failed!');
+                }
+            }
+
+
+            //    This coad is use to request movie data.
+            getDetails = (name) => {
+                xhr.open('GET', 'http://www.omdbapi.com/?t=' + name + '&plot=full&apikey=2467ae4b');
+                xhr.send();
+            }
+
+
+            // This code is use to run above code when button is clicked.
+            let getmoviename = () => {
+                let inputbox = document.getElementById('movie');
+                getDetails(inputbox.value);
+
+            }
+
+        </script>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body style="background-image: url('12.jpg'); background-repeat: no-repeat;">
+
+  <div id="scene">
+    <div data-depth="0.2">
+      <img style="width:1000px; margin-left: -100px; margin-top: -300px;" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Ice_planet.png" alt="">
+    </div>
+
+    <div data-depth="1">
+      <img style="width: 800px; margin-left:270px ;" src="img2.png" alt="">
+    </div>
+    <div data-depth="0.1">
+      <img style="width: 800px; margin-left: 1250px; margin-top: 350px;" src="http://pngimg.com/uploads/moon/moon_PNG21.png" alt="">
+    </div>
+   
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+
+  <script>
+    let scene = document.getElementById('scene');
+    let par = new Parallax(scene)
+  </script>
+
+</body>
+
+</html>
